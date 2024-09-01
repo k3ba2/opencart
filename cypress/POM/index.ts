@@ -9,7 +9,8 @@ export class GetElement {
     getFirstNameInput = () => cy.get(locators.firstNameInput);
     getLastNameInput = () => cy.get(locators.lastNameInput);
     getLoginBtn = () => cy.get(locators.loginBtn);
-    getValidationMsg = () => cy.get(locators.validationMsg);
+    getValidationLoginMsg = () => cy.get(locators.validationLoginMsg);
+    getValidationRegisterMsg = () => cy.get(locators.validationRegisterMsg);
     getForgottenPassBtn = () => cy.get(locators.forgottenPassBtn).contains('Forgotten Password');
     getContinueBtn = () => cy.get(locators.continueBtn);
     getAlertSucces = () => cy.get(locators.alertSucces);

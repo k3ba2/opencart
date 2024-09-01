@@ -9,11 +9,11 @@ export class SettingPage {
 		getEl.getLoginBtn().click();
 	}
 
-	validation(login, pass, msg) {
+	validationLogin(login, pass, msg) {
 		getEl.getEmailInput().clear().type(login);
 		getEl.getPasswordInput().clear().type(pass);
 		getEl.getLoginBtn().click();
-		getEl.getValidationMsg().contains(msg);
+		getEl.getValidationLoginMsg().contains(msg);
 	}
 
 	goLoginPage() {
@@ -40,5 +40,22 @@ export class SettingPage {
 			}
 		});
         getEl.getContinueBtn().click();
+	};
+
+	validationRegister(name, lastname, email, pass, msg) {
+		getEl.getFirstNameInput().clear().type(name);
+		getEl.getLastNameInput().clear().type(lastname);
+		getEl.getEmailInput().clear().type(email);
+		getEl.getPasswordInput().clear().type(pass);
+
+		getEl.getPrivacyPolicyToggle().then((el) => {
+			if (el.is(':checked')) {
+				return;
+			} else {
+				cy.wrap(el).click();
+			}
+		});
+        getEl.getContinueBtn().click();
+		getEl.getValidationRegisterMsg().contains(msg);
 	};
 }

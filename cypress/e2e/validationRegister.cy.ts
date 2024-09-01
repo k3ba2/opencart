@@ -1,9 +1,7 @@
 /// <reference types="cypress"/>
-import { GetElement } from '../POM';
 import { SettingPage } from '../POM/settingsPage';
 import * as data from '../fixtures/example.json';
 
-const getEl = new GetElement();
 const setting = new SettingPage();
 
 describe('Validation when user register account', () => {
@@ -11,5 +9,10 @@ describe('Validation when user register account', () => {
 		cy.visit('/');
 	});
 
-	it('Validation', () => {});
+	Object.values(data.incorrectRegisterData).forEach(users => {
+		it(`${users.case}`, () => {
+			setting.geRegisterPage();
+			setting.validationRegister(users.firstName, users.lastName, users.email, users.pass, users.msg);
+		});
+	});
 });

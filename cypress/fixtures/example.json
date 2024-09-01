@@ -1,26 +1,60 @@
 {
-  "correctUser": {
-    "login": "jan.nowak@test.pl",
-    "pass": "123456789"
-  },
-  "invalidUser": {
-    "incorrectLogin": {
-      "case": "incorrectLogin",
-      "login": "test@test",
-      "pass": "123456789",
-      "msg": "Warning: No match for E-Mail Address and/or Password."
-    },
-    "incorrectPass": {
-      "case": "incorrectPass",
-      "login": "jan.nowak@test.pl",
-      "pass": "111111111",
-      "msg": "Warning: No match for E-Mail Address and/or Password."
-    }
-  },
-  "registerData": {
-    "firstName": "Adam",
-    "lastName": "Kowalski",
-    "email": "adamkowalski@test.pl",
-    "pass": "123456789"
-  }
+	"correctUser": {
+		"login": "jan.nowak@test.pl",
+		"pass": "123456789"
+	},
+	"invalidUser": {
+		"incorrectLogin": {
+			"case": "incorrectLogin",
+			"login": "test@test",
+			"pass": "123456789",
+			"msg": "Warning: No match for E-Mail Address and/or Password."
+		},
+		"incorrectPass": {
+			"case": "incorrectPass",
+			"login": "jan.nowak@test.pl",
+			"pass": "111111111",
+			"msg": "Warning: No match for E-Mail Address and/or Password."
+		}
+	},
+	"registerData": {
+		"firstName": "Adam",
+		"lastName": "Kowalski",
+		"email": "adamkowalski@test.pl",
+		"pass": "123456789"
+	},
+	"incorrectRegisterData": {
+		"incorrectFirstName": {
+			"case": "incorrectFirstName",
+			"firstName": "cmhptmwtwpgczhislfkyrwyczllymskvx",
+			"lastName": "Nowak",
+			"email": "jan.nowak@test.pl",
+			"pass": "123456789",
+      "msg": "First Name must be between 1 and 32 characters!"
+		},
+		"incorrectLastName": {
+			"case": "incorrectLastName",
+			"firstName": "Adam",
+			"lastName": "gupweijbbeeboujgoadkyxnymexjqxzpa",
+			"email": "adam.nowak@test.pl",
+			"pass": "123456789",
+      "msg": "Last Name must be between 1 and 32 characters!"
+		},
+		"incorrectEmail": {
+			"case": "incorrectEmail",
+			"firstName": "Adam",
+			"lastName": "Nowak",
+			"email": "jan.nowak@test",
+			"pass": "123456789",
+      "msg": "E-Mail Address does not appear to be valid!"
+		},
+		"incorrectPass": {
+			"case": "incorrectpass",
+			"firstName": "Adam",
+			"lastName": "Nowak",
+			"email": "jan.nowak@test.pl",
+			"pass": "123",
+      "msg": "Password must be between 4 and 20 characters!"
+		}
+	}
 }
